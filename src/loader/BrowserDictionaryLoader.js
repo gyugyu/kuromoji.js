@@ -17,6 +17,7 @@
 
 "use strict";
 
+var path = require("path");
 var zlib = require("zlibjs/bin/gunzip.min.js");
 var DictionaryLoader = require("./DictionaryLoader");
 
@@ -55,6 +56,18 @@ BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
         callback(err, null);
     };
     xhr.send();
+};
+
+BrowserDictionaryLoader.prototype.join = function (dic_path, filename) {
+    if (/^https?:\/\//.test(dic_path)) {
+        if (/\/$/.text(dic_path)) {
+            return dic_path + filename;
+        } else {
+            return [ dic_path, filename ].join("/");
+        }
+    } else {
+        return path.join(dic_path, filename);
+    }
 };
 
 /**

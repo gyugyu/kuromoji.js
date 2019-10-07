@@ -18,6 +18,7 @@
 "use strict";
 
 var fs = require("fs");
+var path = require("path");
 var node_zlib = require("zlib");
 var DictionaryLoader = require("./DictionaryLoader");
 
@@ -50,6 +51,10 @@ NodeDictionaryLoader.prototype.loadArrayBuffer = function (file, callback) {
             callback(null, typed_array.buffer);
         });
     });
+};
+
+NodeDictionaryLoader.prototype.join = function (dic_path, filename) {
+    return path.join(dic_path, filename);
 };
 
 /**
