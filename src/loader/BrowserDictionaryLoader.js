@@ -60,7 +60,7 @@ BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
 
 BrowserDictionaryLoader.prototype.join = function (dic_path, filename) {
     if (/^https?:\/\//.test(dic_path)) {
-        if (/\/$/.text(dic_path)) {
+        if (/\/$/.test(dic_path)) {
             return dic_path + filename;
         } else {
             return [ dic_path, filename ].join("/");
