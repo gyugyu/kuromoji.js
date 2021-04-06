@@ -1,5 +1,5 @@
 {
-  "name": "kuromoji",
+  "name": "@gyugyu/kuromoji",
   "description": "JavaScript implementation of Japanese morphological analyzer",
   "version": "0.1.2",
   "author": "Takuya Asano <takuya.a@gmail.com>",
